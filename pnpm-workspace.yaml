@@ -4,6 +4,19 @@ packages:
   - "packages/*"
   - "scripts/*"
 
+catalog:
+  eslint: ^10.2.0
+  typescript: ^6.0.2
+
+catalogs:
+  build:
+    tsdown: ^0.21.7
+
+  types:
+    "@types/node": ^25.5.2
+
 strictDepBuilds: true
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  - semver@6.3.1
