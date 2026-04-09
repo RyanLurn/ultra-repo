@@ -3,7 +3,7 @@ import { defineConfig } from "eslint/config";
 import globals from "globals";
 import { baseConfig } from "./base";
 
-export const bunConfig = defineConfig([
+export const nodeConfig = defineConfig([
   baseConfig,
   {
     languageOptions: {

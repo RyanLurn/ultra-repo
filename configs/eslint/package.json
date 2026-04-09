@@ -2,6 +2,9 @@
   "name": "@ultra-repo/eslint-config",
   "type": "module",
   "private": "true",
+  "scripts": {
+    "build": "tsdown"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "catalog:types",
@@ -11,7 +14,6 @@
     "eslint-plugin-perfectionist": "^5.8.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^17.4.0",
-    "tsdown": "catalog:build",
     "typescript": "catalog:",
     "typescript-eslint": "^8.58.1"
   }
