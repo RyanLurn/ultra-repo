@@ -1,5 +1,8 @@
 {
   "name": "@ultra-repo/typescript-config",
   "type": "module",
-  "private": "true"
+  "private": "true",
+  "exports": {
+    "./*": "./src/*.json"
+  }
 }
