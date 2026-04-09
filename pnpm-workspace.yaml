@@ -1,3 +1,9 @@
+packages:
+  - "apps/*"
+  - "configs/*"
+  - "packages/*"
+  - "scripts/*"
+
 strictDepBuilds: true
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
