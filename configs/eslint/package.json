@@ -8,6 +8,20 @@
     "lint:fix": "eslint --cache --fix",
     "check": "pnpm run check-types && pnpm run lint"
   },
+  "exports": {
+    "./node": {
+      "import": "./src/node.js",
+      "types": "./src/node.d.ts"
+    },
+    "./browser": {
+      "import": "./src/browser.js",
+      "types": "./src/browser.d.ts"
+    },
+    "./isomorphic": {
+      "import": "./src/isomorphic.js",
+      "types": "./src/isomorphic.d.ts"
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tanstack/eslint-plugin-router": "^1.161.6",
