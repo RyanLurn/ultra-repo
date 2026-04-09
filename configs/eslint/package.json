@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tanstack/eslint-plugin-router": "^1.161.6",
     "@types/node": "catalog:types",
     "@ultra-repo/typescript-config": "workspace:*",
     "eslint": "catalog:",
