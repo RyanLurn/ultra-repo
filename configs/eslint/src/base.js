@@ -1,5 +1,5 @@
+import { globalIgnores, defineConfig } from "eslint/config";
 import perfectionist from "eslint-plugin-perfectionist";
-import { defineConfig, globalIgnores } from "eslint/config";
 import ts from "typescript-eslint";
 import js from "@eslint/js";
 
