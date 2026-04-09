@@ -1,0 +1,26 @@
+{
+  "name": "@ultra-repo/core",
+  "type": "module",
+  "private": "true",
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint --cache",
+    "lint:fix": "eslint --cache --fix",
+    "check": "pnpm run check-types && pnpm run lint"
+  },
+  "exports": {
+    "./*": {
+      "import": "./dist/*.mjs",
+      "types": "./dist/*.d.mts"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "catalog:types",
+    "@ultra-repo/eslint-config": "workspace:*",
+    "@ultra-repo/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "tsdown": "catalog:build",
+    "typescript": "catalog:"
+  }
+}
