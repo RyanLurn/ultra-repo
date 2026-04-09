@@ -2,5 +2,12 @@
   "name": "ultra-repo",
   "version": "0.1.0",
   "type": "module",
+  "scripts": {
+    "format": "prettier . --write --cache",
+    "format:check": "prettier . --check --cache"
+  },
+  "devDependencies": {
+    "prettier": "3.8.1"
+  },
   "packageManager": "pnpm@10.33.0"
 }
