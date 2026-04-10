@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+import { usePowerShell } from "zx";
+
+usePowerShell();
 
 const program = new Command();
 
