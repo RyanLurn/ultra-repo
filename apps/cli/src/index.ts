@@ -30,3 +30,5 @@ program
     console.log("Creating the package...");
     console.log("Done!");
   });
+
+program.parse(process.argv);

@@ -2,10 +2,10 @@
   "name": "@ultra-repo/cli",
   "type": "module",
   "bin": {
-    "ultra": "dist/index.js"
+    "ultra": "dist/index.mjs"
   },
   "scripts": {
-    "build": "rolldown src/index.ts --file dist/index.js",
+    "build": "tsdown",
     "check-types": "tsc --noEmit",
     "lint": "eslint --cache",
     "lint:fix": "eslint --cache --fix",
@@ -22,7 +22,7 @@
     "@ultra-repo/eslint-config": "workspace:*",
     "@ultra-repo/typescript-config": "workspace:*",
     "eslint": "catalog:",
-    "rolldown": "^1.0.0-rc.15",
+    "tsdown": "catalog:build",
     "typescript": "catalog:"
   }
 }
