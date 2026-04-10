@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
-console.log("Hello from my monorepo CLI 👋");
+import z from "zod";
+
+console.log("Hello from Ultra CLI 👋");
 
 // You can parse args:
 const args = process.argv.slice(2);
+const validArgs = z.array(z.string()).parse(args);
 
-if (args.includes("--help")) {
+if (validArgs.includes("--help")) {
   console.log("Usage: mycli [options]");
 }
