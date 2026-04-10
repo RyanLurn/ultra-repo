@@ -9,6 +9,8 @@ import {
 } from "@ultra-repo/core/error/classes/fallback";
 import { type FileHandle, writeFile } from "node:fs/promises";
 
+export type WriteFileResult = Result<undefined, FallBackError>;
+
 export async function safeWriteFile({
   options,
   file,
@@ -30,7 +32,7 @@ export async function safeWriteFile({
     | string
     | Stream;
   file: FileHandle | PathLike;
-}): Promise<Result<undefined, FallBackError>> {
+}): Promise<WriteFileResult> {
   try {
     await writeFile(file, data, options);
     return {
