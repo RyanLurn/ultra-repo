@@ -38,7 +38,16 @@ export async function safeWriteFile({
       success: true,
     };
   } catch (error) {
-    const fallbackError = createFallbackError({ cause: error });
+    const context = {
+      arguments: {
+        options,
+        data,
+        file,
+      },
+      operation: "safeWriteFile",
+    };
+
+    const fallbackError = createFallbackError({ cause: error, context });
     return {
       error: fallbackError,
       success: false,
