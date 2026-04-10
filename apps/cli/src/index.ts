@@ -1,13 +1,32 @@
 #!/usr/bin/env node
 
-import z from "zod";
+import { Command } from "commander";
 
-console.log("Hello from Ultra CLI 👋");
+const program = new Command();
 
-// You can parse args:
-const args = process.argv.slice(2);
-const validArgs = z.array(z.string()).parse(args);
+program
+  .command("init")
+  .description("initialize a monorepo with pnpm")
+  .action(() => {
+    // Placeholder operations
+    console.log("Generating files...");
+    console.log("Done!");
+  });
 
-if (validArgs.includes("--help")) {
-  console.log("Usage: mycli [options]");
-}
+program
+  .command("grab")
+  .description("grab all files committed to Git")
+  .action(() => {
+    // Placeholder operations
+    console.log("Grabbing files...");
+    console.log("Done!");
+  });
+
+program
+  .command("create")
+  .description("create a package inside the monorepo")
+  .action(() => {
+    // Placeholder operations
+    console.log("Creating the package...");
+    console.log("Done!");
+  });
