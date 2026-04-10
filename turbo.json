@@ -6,18 +6,15 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "transit": {
-      "dependsOn": ["^transit"]
-    },
     "check-types": {
-      "dependsOn": ["^build", "transit"]
+      "dependsOn": ["^build"]
     },
     "lint": {
-      "dependsOn": ["^build", "transit"],
+      "dependsOn": ["^build"],
       "outputs": [".eslintcache"]
     },
     "lint:fix": {
-      "dependsOn": ["^build", "transit"],
+      "dependsOn": ["^build"],
       "outputs": [".eslintcache"]
     }
   }
