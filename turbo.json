@@ -4,22 +4,18 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "outputLogs": "errors-only"
+      "outputs": ["dist/**"]
     },
     "check-types": {
-      "dependsOn": ["^build"],
-      "outputLogs": "errors-only"
+      "dependsOn": ["^build"]
     },
     "lint": {
       "dependsOn": ["^build"],
-      "outputs": [".eslintcache"],
-      "outputLogs": "errors-only"
+      "outputs": [".eslintcache"]
     },
     "lint:fix": {
       "dependsOn": ["^build"],
-      "outputs": [".eslintcache"],
-      "outputLogs": "errors-only"
+      "outputs": [".eslintcache"]
     }
   }
 }
