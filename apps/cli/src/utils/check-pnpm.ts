@@ -6,7 +6,11 @@ import {
 } from "@ultra-repo/core/error/classes/fallback";
 import { $ } from "zx";
 
-export async function checkPnpm(): Promise<Result<string, FallBackError>> {
+import { ShellError } from "@/errors/shell";
+
+export async function checkPnpm(): Promise<
+  Result<string, FallBackError | ShellError>
+> {
   try {
     const output = await $`pnpm --version`;
     if (output.exitCode === 0) {
@@ -16,13 +20,14 @@ export async function checkPnpm(): Promise<Result<string, FallBackError>> {
       };
     }
 
-    const fallbackError = createFallbackError({
-      context: { operation: "checkPnpm", result: output },
-      message: "Failed to check pnpm version",
-      cause: output.stderr,
+    const shellError = new ShellError("Failed to check pnpm's version", {
+      context: {
+        operation: "checkPnpm",
+        result: output,
+      },
     });
     return {
-      error: fallbackError,
+      error: shellError,
       success: false,
     };
   } catch (error) {
