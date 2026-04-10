@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
+    "check-types": {
+      "dependsOn": ["^build", "transit"]
+    },
+    "lint": {
+      "dependsOn": ["^build", "transit"],
+      "outputs": [".eslintcache"]
+    },
+    "lint:fix": {
+      "dependsOn": ["^build", "transit"],
+      "outputs": [".eslintcache"]
+    }
+  }
+}
